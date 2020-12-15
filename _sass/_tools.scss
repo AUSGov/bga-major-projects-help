@@ -1,0 +1,347 @@
+.page-header-theme-tool {
+    background: #EFD8E7;
+    padding: 64px 15px !important;
+    
+    .page-header-intro {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    img {
+        width: 100%;
+        margin: 0 auto 32px;
+        display: block;
+        max-width: 400px; 
+    }
+    @media (max-width: 576px){
+        padding: 64px 15px 48px 15px !important;
+        
+        h1 {
+            font-size: 32px;
+            line-height: 37px;
+        }
+    }
+    @media (min-width: 768px) {
+        
+        min-height: 280px;
+        
+        .header-image-wrapper {
+            width: inherit;
+            img {
+                position: absolute;
+                top: -10px;
+                right: 30px;
+                max-width: 400px;     
+            }
+        }
+    }
+}
+.top-of-page {
+    padding-top: 0;
+}
+
+.tool-main-section {
+   
+    /* PROGRESS BAR */
+    .progress-percentage {
+        margin-bottom: 4px;
+        
+        p {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            line-height: normal;
+            color: $grey-darker;
+            display: inline;
+        }
+    }
+
+    .progress {
+        display: flex;
+        overflow: hidden;
+        font-size: 12px;
+        border-radius: 4px;
+        height: 4px;
+        background: $grey-light;
+        margin-bottom: 48px;
+        
+        .progress-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: $white;
+            text-align: center;
+            white-space: nowrap;
+            height: 4px;
+            background: $purple-dark;
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+    }
+    /* Media Query for progress bar */
+    @media (max-width: 576px) {
+
+        .progress,
+        .progress-bar {
+            height: 3px;
+        }
+        .progress-percentage p {
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+    }
+    form {
+        h3 {
+            padding: 0 0 16px 0;
+        }
+        .no-padding-right {
+            padding-right: 0px;
+        }
+        
+        /* CONTEXTUAL HELP */
+        .contextual-help {
+            .help-question {
+
+                display: flex;
+
+                svg {
+                    margin-right: 8px;
+                    margin-top: 6px;
+                    
+                    &.open {
+                        transform: rotate(90deg);
+                    }
+                }
+                
+                p {
+                    cursor: pointer;
+                    color: #4569A0;
+                    text-decoration: underline;
+                    padding: 0 0 0 0;
+                    margin-bottom: 16px;
+                    font-size: 14px;
+                }          
+            }
+            .help-answer {
+                display: none;
+                margin-bottom: 32px;
+                border-left: solid $blue-primary 2px;
+                    padding: 0 0 0 14px;
+                    margin-left: 2px;
+
+                > *:last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+                > *:last-child li:last-of-type {          
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+                p, li {
+                    font-size: 14px;
+                    padding-bottom: 16px;                
+                }
+            }
+        }
+
+        .form-divider {
+            color: $grey;
+            margin-top: 0;
+            margin-bottom: 32px;
+            padding: 0;
+            border: 0;
+            border-top: 2px solid $grey;
+        }
+
+        /* RADIO BUTTONS */
+        .radio-item {
+            margin-bottom: 32px;
+            display: flex;
+
+            input[type="radio"] {
+                opacity: 0;
+                width: 0px;
+                height: 0px;
+            }
+            label {
+                position: relative;
+                padding: 14px 14px 14px 48px;
+                cursor: pointer;
+                display: inline-block;
+                line-height: 20px;
+                width: calc(50% - 16px);
+                margin-right: 16px;
+                display: block;
+                font-size: 16px;
+                @include font-format($font-family, $font-regular, normal);
+                border: solid 1px $black-light;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &:before {
+                    height: 24px;
+                    width: 24px;
+                    content: " ";
+                    background: url(../assets/radio-not-selected.svg) no-repeat;
+                    background-size: 24px 24px;
+                    position: absolute;
+                    top: calc(50% - 12px);
+                    left: 14px;
+                }
+
+                &.radio-focus {
+                    border: $blue-primary solid 4px;
+                    &:before {
+                        background: url(../assets/radio-selected.svg) no-repeat;
+                        background-size: 24px 24px;
+
+                    }
+                }
+            }
+        }
+
+
+        /* BUTTONS */
+
+        .form-buttons {
+
+            .standardcta-button-wrapper {
+                margin: 0 10px 32px 0;
+                height: 48px;
+                display: inline-block;
+                width: calc(50% - 16px);
+                      
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                .theme-button-primary {
+                    color: $white;
+                    background: $blue-primary-mid;
+                    border: $blue-primary solid 2px;
+                    box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;
+                    display: block;
+                    padding-top: 14px;
+
+                    &:visited {
+                        border: $blue-primary solid 2px;
+                        background: $blue-primary-mid;
+                    }
+                    &:hover {
+                        color: $white;
+                        background: $blue-primary;
+                        border: $blue-active solid 2px;
+                    }
+                }
+                .theme-button-secondary {
+                    color: $blue-primary-mid;
+                    background: $white;
+                    border: $blue-primary-mid solid 2px;
+                    box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px;
+                    display: block;
+                    padding-top: 14px;
+
+                    &:visited {
+                        border: $blue-primary solid 2px;
+                        background: $white;
+                    }
+                    &:hover {
+                        color: $white;
+                        background: $blue-primary;
+                    }
+                    &:active {
+                        
+                    }
+                }
+                &.disabled {
+                    .theme-button-primary {
+                        color: $grey;
+                        background: $white;
+                        border: solid 2px $grey;
+                        cursor: default;
+
+                        &:hover,
+                        &:visited,
+                        &:focus,
+                        &:active {
+                            color: $grey;
+                            background: $white !important;
+                            border: solid 2px $grey !important;
+                            cursor: default;
+                            box-shadow: rgba(0,0,0,0.1) 0px 2px 4px 0px !important;
+                            transform: none !important;
+                        }
+                    }
+                }
+            }
+        }
+        
+        /* CLAUSE BOXES */
+        .clause-box {
+            padding: 0px 1.5em 1em 1.5em;
+            display: none;
+            border: 4px solid #ebebeb;
+            border-radius: 4px;
+            margin: 0 0 32px 0;
+            background: #f8f9fa;
+
+            .clause-question {
+                .clause-checkbox {
+                    border-bottom: 2px solid #ffc107;
+
+                    .checkbox-item {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .clause-content {
+                -webkit-box-align: normal;
+                -ms-flex-align: normal;
+                align-items: normal;
+                padding-top: 16px;
+
+                p {
+                    padding: 0.25em 0;
+                }
+
+                .clause-icon {
+                    padding: 0.5em 0;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+
+                    h3 {
+                        padding: 0 0 0 1rem;
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            @media (max-width: 579px) {
+
+                .clause-box {
+                    .clause-content {
+                        .clause-icon {
+                            display: block;
+
+                            img {
+                                display: none;
+                            }
+
+                            h3 {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+    
