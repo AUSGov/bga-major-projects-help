@@ -1,36 +1,44 @@
 .page-header-theme-tool {
     background: #EFD8E7;
-    padding: 64px 15px !important;
+    padding: 48px 15px !important;
     
-    .page-header-intro {
-        font-size: 18px;
-        line-height: 30px;
+    h1 {
+        margin: 0;
+        padding: 0; 
     }
     img {
         width: 100%;
-        margin: 0 auto 32px;
+        //margin: 0 auto 0;
+        margin: -10px auto 0;
         display: block;
-        max-width: 400px; 
+        max-width: 250px; 
     }
-    @media (max-width: 576px){
-        padding: 64px 15px 48px 15px !important;
+    @media (max-width: 768px){
+        padding: 32px 15px 48px !important;
         
         h1 {
             font-size: 32px;
-            line-height: 37px;
+            line-height: 37px; 
         }
     }
-    @media (min-width: 768px) {
-        
-        min-height: 280px;
+    /*@media (min-width: 768px) {
         
         .header-image-wrapper {
-            width: inherit;
+            position: relative;
+            width: 100%;
+            //height: 50px;
+            //background: yellow;
             img {
-                position: absolute;
-                top: -10px;
-                right: 30px;
-                max-width: 400px;     
+                //width: 100%;
+                //max-width: 30px;
+                //margin: -25px 0 0 0;   
+            }
+        }
+    }*/
+    @media (max-width: 768px) {
+        .header-image-wrapper {
+            img {
+                display: none;
             }
         }
     }
@@ -40,6 +48,35 @@
 }
 
 .tool-main-section {
+    
+    .start-wrapper {
+        
+        border: 4px solid $grey-lighter;
+        padding: 32px;
+        margin-bottom: 32px;
+        
+        h2 {
+            padding: 0 0 32px 0;
+        }
+        
+        .start-button-wrapper {
+            background: #EFD8E7;
+            padding: 32px;
+            margin-bottom: 32px;
+            
+            .start-lead {
+                @include font-format($font-family, $font-semibold, normal);
+                font-size: 18px;
+                line-height: 28px;
+                padding: 0;
+                margin: 0 0 32px 0;
+            }
+            .standardcta-button-wrapper {
+                max-width: 180px;
+                margin: 0;
+            }
+        }
+    }
    
     /* PROGRESS BAR */
     .progress-percentage {
@@ -90,6 +127,7 @@
             margin-bottom: 8px;
         }
     }
+    
     form {
         h3 {
             padding: 0 0 16px 0;
@@ -164,6 +202,8 @@
                 height: 0px;
             }
             label {
+                box-sizing: border-box;
+                height: 54px;
                 position: relative;
                 padding: 14px 14px 14px 48px;
                 cursor: pointer;
@@ -198,6 +238,13 @@
                         background-size: 24px 24px;
 
                     }
+                }
+            }
+            &.width-100 {
+                display: block;
+                label {
+                    width: 100%;
+                    margin-right: 0;
                 }
             }
         }
@@ -282,7 +329,7 @@
         .clause-box {
             padding: 0px 1.5em 1em 1.5em;
             display: none;
-            border: 4px solid #ebebeb;
+            border: 4px solid $grey-lighter;
             border-radius: 4px;
             margin: 0 0 32px 0;
             background: #f8f9fa;
