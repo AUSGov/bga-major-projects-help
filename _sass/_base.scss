@@ -110,6 +110,24 @@
     
 }
 
+.main-section {
+    a:visited {
+        color: $blue-primary-mid;
+        border-bottom-color: $blue-primary-mid;
+    }
+    
+    ul li {
+        position: relative;
+        
+        &:before {
+            position: absolute;
+            left: -1.8rem;
+            top: .6rem;
+        }
+    }
+        
+}
+
 
 // MINI-LIST
 .mini-list {

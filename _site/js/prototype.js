@@ -329,6 +329,18 @@ $(document).ready(function () {
         }
     });
     
+    // Results accordion
+    $(".result-item-title").on('click', function(){
+        $(this).next(".result-item-text").slideToggle();
+        $(this).toggleClass('open');
+    });
+    
+    // Change answers accordion
+    $(".answers-item-title").on('click', function(){
+        $(this).next(".answers-item-text").slideToggle();
+        $(this).toggleClass('open');
+    });
+    
 
     
 }); // END doc ready
