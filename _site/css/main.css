@@ -3280,7 +3280,9 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .main-section ul li { position: relative; }
 
-.main-section ul li:before { position: absolute; left: -1.8rem; top: .6rem; }
+.main-section ul li:before { content: "" !important; position: absolute; left: -1.8rem; top: .6rem !important; width: 6px !important; height: 6px !important; }
+
+.main-section .contact-card { padding: 0; margin-bottom: 32px; }
 
 .mini-list { margin-bottom: 32px; }
 
@@ -3595,7 +3597,7 @@ label { display: block; padding: 5px 0; font-weight: bold; }
   #guide-tiles .guide-section .guide-subtiles-wrapper { padding: 0px 0px 0 16px; }
   #guide-tiles .guide-section .guide-subtiles-wrapper .guide-subtile { margin: 0 16px 24px 0; } }
 
-.page-header-theme-tool { background: #EFD8E7; padding: 48px 15px !important; /*@media (min-width: 768px) { .header-image-wrapper { position: relative; width: 100%; //height: 50px; //background: yellow; img { //width: 100%; //max-width: 30px; //margin: -25px 0 0 0;    } } }*/ }
+.page-header-theme-tool { background: #EFD8E7; padding: 48px 15px !important; }
 
 .page-header-theme-tool h1 { margin: 0; padding: 0; }
 
@@ -3631,7 +3633,7 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 @media (max-width: 576px) { .tool-main-section .progress, .tool-main-section .progress-bar { height: 3px; }
   .tool-main-section .progress-percentage p { font-size: 12px; margin-bottom: 8px; } }
 
-.tool-main-section form { /* CONTEXTUAL HELP */ /* RADIO BUTTONS */ /* BUTTONS */ /* CLAUSE BOXES */ }
+.tool-main-section form { margin-bottom: 32px; /* CONTEXTUAL HELP */ /* RADIO BUTTONS */ /* BUTTONS */ /* CLAUSE BOXES */ }
 
 .tool-main-section form h3 { padding: 0 0 16px 0; }
 
@@ -3659,7 +3661,7 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section form .radio-item input[type="radio"] { opacity: 0; width: 0px; height: 0px; }
 
-.tool-main-section form .radio-item label { box-sizing: border-box; height: 54px; position: relative; padding: 14px 14px 14px 48px; cursor: pointer; display: inline-block; line-height: 20px; width: calc(50% - 16px); margin-right: 16px; display: block; font-size: 16px; font-family: "Open Sans", sans-serif; font-weight: 400; font-style: normal; border: solid 1px #333333; }
+.tool-main-section form .radio-item label { box-sizing: border-box; min-height: 54px; position: relative; padding: 14px 14px 14px 48px; cursor: pointer; display: inline-block; line-height: 20px; width: calc(50% - 16px); margin-right: 16px; font-size: 16px; font-family: "Open Sans", sans-serif; font-weight: 400; font-style: normal; border: solid 1px #333333; }
 
 .tool-main-section form .radio-item label:last-of-type { margin-right: 0; }
 
@@ -3673,7 +3675,9 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section form .radio-item.width-100 label { width: 100%; margin-right: 0; }
 
-.tool-main-section form .form-buttons .standardcta-button-wrapper { margin: 0 10px 32px 0; height: 48px; display: inline-block; width: calc(50% - 16px); }
+.tool-main-section form .radio-item.width-100 input { display: none; }
+
+.tool-main-section form .form-buttons .standardcta-button-wrapper { margin: 0 10px 0 0; height: 48px; display: inline-block; width: calc(50% - 16px); }
 
 .tool-main-section form .form-buttons .standardcta-button-wrapper:last-of-type { margin-right: 0; }
 
@@ -3703,15 +3707,23 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section form .clause-box .clause-content p { padding: 0.25em 0; }
 
-.tool-main-section form .clause-box .clause-content .clause-icon { padding: 0.5em 0; -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; }
+.tool-main-section form .clause-box .clause-content .clause-icon { padding: 0.5em 0; -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; left: 32px; top: 32px; }
+
+.tool-main-section form .clause-box .clause-content .clause-icon svg { width: 56px; }
 
 .tool-main-section form .clause-box .clause-content .clause-icon h3 { padding: 0 0 0 1rem; font-size: 1rem; }
 
-@media (max-width: 579px) { .tool-main-section form .clause-box .clause-box .clause-content .clause-icon { display: block; }
-  .tool-main-section form .clause-box .clause-box .clause-content .clause-icon img { display: none; }
-  .tool-main-section form .clause-box .clause-box .clause-content .clause-icon h3 { padding: 0; } }
+@media (max-width: 576px) { .tool-main-section form .clause-box .clause-content .clause-icon { display: block; }
+  .tool-main-section form .clause-box .clause-content .clause-icon svg { display: none; }
+  .tool-main-section form .clause-box .clause-content .clause-icon h3 { padding: 0; } }
+
+@media (max-width: 576px) { .tool-main-section form .no-padding-right { padding-right: 15px; }
+  .tool-main-section form .form-buttons .standardcta-button-wrapper { width: 100%; margin: 0 0 16px 0; }
+  .tool-main-section form .form-buttons .standardcta-button-wrapper:last-of-type { margin: 0; } }
 
 .tool-main-section .results-container { border: 4px solid #D8D8D8; padding: 32px; margin: 0 0 32px 0; }
+
+@media (max-width: 576px) { .tool-main-section .results-container { padding: 16px; } }
 
 .tool-main-section .results-container .results-accordion { margin: 0 0 32px 0; }
 
@@ -3737,56 +3749,57 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section .results-container .results-accordion .result-item-text p:last-of-type { padding: 0; }
 
-@media (max-width: 576px) { .tool-main-section .results-container { padding: 16px; } }
+.tool-main-section .results-container .answers-accordion { margin: 0 0 32px 0; }
 
-.tool-main-section .answers-accordion { margin: 0 0 32px 0; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title { background: #DFB1D0; padding: 16px; position: relative; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-title { background: #DFB1D0; padding: 16px; position: relative; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title svg { position: absolute; right: 16px; top: calc(50% - 5px); }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-title svg { position: absolute; right: 16px; top: calc(50% - 5px); }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title p:last-of-type { padding: 0 24px 0 0; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-title p:last-of-type { padding: 0 24px 0 0; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title.open p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-title.open p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title.open svg { transform: rotate(180deg); }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-title.open svg { transform: rotate(180deg); }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:hover, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:active, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:focus { cursor: pointer; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-title:hover, .tool-main-section .answers-accordion .answers-item .answers-item-title:active, .tool-main-section .answers-accordion .answers-item .answers-item-title:focus { cursor: pointer; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:hover p, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:active p, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:focus p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-title:hover p, .tool-main-section .answers-accordion .answers-item .answers-item-title:active p, .tool-main-section .answers-accordion .answers-item .answers-item-title:focus p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text { background: #FFECF3; padding: 16px; display: none; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text { background: #FFECF3; padding: 16px; display: none; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table { width: 100%; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table { width: 100%; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table tr { display: flex; border-bottom: solid 2px #D8D8D8; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table tr { display: flex; border-bottom: solid 2px #D8D8D8; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td { padding: 16px; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table td { padding: 16px; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.question { width: 70%; padding-left: 0px; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table td.question { width: 70%; padding-left: 0px; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.answer { width: 15%; font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table td.answer { width: 15%; font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit { padding-right: 0px; width: 15%; text-align: right; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table td.edit { padding-right: 0px; width: 15%; text-align: right; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a { background: url(../assets/Icon-edit.svg) no-repeat; background-position: center right; padding-right: 24px; border-bottom: none; text-decoration: underline; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table td.edit a { background: url(../assets/Icon-edit.svg) no-repeat; background-position: center right; padding-right: 24px; border-bottom: none; text-decoration: underline; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:visited { color: #4569A0; border-bottom-color: none; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table td.edit a:visited { color: #4569A0; border-bottom-color: none; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:focus, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:hover { box-shadow: none; color: #254F90; }
 
-.tool-main-section .answers-accordion .answers-item .answers-item-text table td.edit a:focus, .tool-main-section .answers-accordion .answers-item .answers-item-text table td.edit a:hover { box-shadow: none; color: #254F90; }
+@media (max-width: 768px) { .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.question { width: 60%; }
+  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.answer { width: 20%; }
+  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit { width: 20%; } }
 
-@media (max-width: 768px) { .tool-main-section .answers-accordion .answers-item .answers-item-text table td.question { width: 60%; }
-  .tool-main-section .answers-accordion .answers-item .answers-item-text table td.answer { width: 20%; }
-  .tool-main-section .answers-accordion .answers-item .answers-item-text table td.edit { width: 20%; } }
+@media (max-width: 576px) { .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table { display: block; border-spacing: 0; }
+  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table tr { display: block; }
+  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.question { width: 100%; display: block; }
+  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.answer { width: 61%; display: inline-block; padding: 8px 0px; }
+  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit { width: 36%; display: inline-block; padding: 8px 0px; } }
 
-@media (max-width: 576px) { .tool-main-section .answers-accordion .answers-item .answers-item-text table { display: block; border-spacing: 0; }
-  .tool-main-section .answers-accordion .answers-item .answers-item-text table tr { display: block; }
-  .tool-main-section .answers-accordion .answers-item .answers-item-text table td.question { width: 100%; display: block; }
-  .tool-main-section .answers-accordion .answers-item .answers-item-text table td.answer { width: 61%; display: inline-block; padding: 8px 0px; }
-  .tool-main-section .answers-accordion .answers-item .answers-item-text table td.edit { width: 36%; display: inline-block; padding: 8px 0px; } }
+.tool-main-section .results-container form { margin-bottom: 0; }
 
-.tool-main-section form .form-buttons .standardcta-button-wrapper { width: auto; margin: 0; }
+.tool-main-section .results-container form .form-buttons .standardcta-button-wrapper { width: auto; margin: 0; padding-right: 12px; }
 
-@media (max-width: 576px) { .tool-main-section form .form-buttons .standardcta-button-wrapper { width: 100%; } }
+@media (max-width: 576px) { .tool-main-section .results-container form .form-buttons .standardcta-button-wrapper { width: 100%; padding: 0; }
+  .tool-main-section .results-container form .form-buttons .standardcta-button-wrapper:first-of-type { margin-bottom: 16px; } }
 
 /*# sourceMappingURL=main.css.map */

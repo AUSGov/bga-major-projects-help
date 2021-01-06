@@ -120,10 +120,17 @@
         position: relative;
         
         &:before {
+            content: "" !important;
             position: absolute;
             left: -1.8rem;
-            top: .6rem;
+            top: .6rem !important;
+            width: 6px !important;
+            height: 6px !important;
         }
+    }
+    .contact-card {
+        padding: 0;
+        margin-bottom: 32px;
     }
         
 }
