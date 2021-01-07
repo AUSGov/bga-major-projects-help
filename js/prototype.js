@@ -308,11 +308,28 @@ $(document).ready(function () {
         $(this).parents(".radio-item").find("label").removeClass('radio-focus');
         $(this).addClass("radio-focus");
         
-        $(this).parents(".form-question").addClass("item-checked");
-        if ($(".form-question").length === $(".form-question.item-checked").length) {
+        $(this).parents(".form-question").addClass("item-checked").removeClass("error");
+        /*if ($(".form-question").length === $(".form-question.item-checked").length) {
             $(this).parents("form").find(".disabled").removeClass("disabled");
+            
+        }*/
+    });
+    
+    // Error messaging
+    $(".next-button").on("click", function(e){
+        
+        if ($(".form-question").length !== $(".form-question.item-checked").length) {
+            e.preventDefault(); 
+            
+            $(".form-question").each(function(){
+                if(!$(this).hasClass("item-checked")) 
+                    {
+                        $(this).addClass("error");
+                    }
+            });
         }
     });
+    
     
     // Contextual help
     $(".help-question").on('click', function(){
@@ -339,6 +356,16 @@ $(document).ready(function () {
     $(".answers-item-title").on('click', function(){
         $(this).next(".answers-item-text").slideToggle();
         $(this).toggleClass('open');
+    });
+    
+    // Dynamic form questions
+    $(".location-1 .radio-item label").on('click', function(){
+        
+        if($(this).hasClass("land")) {
+            console.log("focus man");
+            
+            $('.location-land-1').slideDown().removeClass('inactive');
+           }
     });
     
 

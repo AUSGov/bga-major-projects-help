@@ -12,17 +12,13 @@
         display: block;
         max-width: 250px; 
     }
-    @media (max-width: 768px){
+    @media (max-width: 767px){
         padding: 32px 15px 48px !important;
-        
-        h1 {
-            font-size: 32px;
-            line-height: 37px; 
-        }
     }
     @media (max-width: 768px) {
         .header-image-wrapper {
             img {
+                display: none;
                 display: none;
             }
         }
@@ -46,19 +42,69 @@
         
         .start-button-wrapper {
             background: #EFD8E7;
-            padding: 32px;
+            padding: 0px;
             margin-bottom: 32px;
+            border-top: solid $purple-light 4px;
+            position: relative;
+            
+            .tool-start {
+                padding: 32px;
+                width: 66.666667%;               
+            }
+            .tool-time {
+                padding: 32px;
+                background: #E7C4DB;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 33.333333%;
+                height: 100%;
+            }
             
             .start-lead {
-                @include font-format($font-family, $font-semibold, normal);
                 font-size: 18px;
-                line-height: 28px;
+                line-height: 32px;
                 padding: 0;
-                margin: 0 0 32px 0;
+                margin: 0 0 0 0;
             }
             .standardcta-button-wrapper {
-                max-width: 180px;
                 margin: 0;
+            }
+        }
+        form {
+            margin: 0px 0px 32px 32px;
+            width: 75%;
+        }
+        @media (max-width: 767px) {
+            .start-button-wrapper {
+                .tool-start {
+                    width: 100%;
+                }
+
+                .tool-time {
+                    width: 100%;
+                    position: relative;
+                    padding: 0 32px;
+                    background: none;
+
+                    svg {
+                        display: none;
+                    }
+                }
+            }
+        }
+        @media (max-width: 576px) {
+            padding: 0;
+            border: none; 
+            margin: 0;
+            
+            form {
+                width: 100%; 
+                margin: 0px 32px 32px 32px;
+                
+                .standardcta-button-wrapper {
+                    width: 100%;
+                }
             }
         }
     }
@@ -176,6 +222,7 @@
             padding: 0;
             border: 0;
             border-top: 2px solid $grey;
+            width: 100%;
         }
 
         /* RADIO BUTTONS */
@@ -198,7 +245,6 @@
                 line-height: 20px;
                 width: calc(50% - 16px);
                 margin-right: 16px;
-                //display: block;
                 font-size: 16px;
                 @include font-format($font-family, $font-regular, normal);
                 border: solid 1px $black-light;
@@ -238,17 +284,50 @@
                 }
             }
         }
+        
+        /* ERROR MESSAGES */
+        .error-message {
+            display: none;
+        }
+        .error {
+            .radio-item {
+                margin: 0;
+                
+                label {
+                    outline: none;
+                    border: solid 3px $red-negative-dark;
+                }
+            }
+            .error-message { 
+                display: block;
+                
+                p {
+                    color: $red-negative-dark;
+                    margin: 0 0 32px 0;
+                    padding: 8px 0 0 0; 
+                }
+            }
+        }
+        .inactive {
+            display: none;
+        }
 
 
         /* BUTTONS */
 
         .form-buttons {
 
+            &.right {
+                text-align: right;
+            }
+            .tertiary-link {
+                display: inline-block;
+                margin-right: 16px;
+            }
             .standardcta-button-wrapper {
                 margin: 0 10px 0 0;
-                height: 48px;
+                min-height: 48px;
                 display: inline-block;
-                width: calc(50% - 16px);
 
                 &:last-of-type {
                     margin-right: 0;
@@ -260,7 +339,7 @@
                     border: $blue-primary solid 2px;
                     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
                     display: block;
-                    padding-top: 14px;
+                    padding: 14px 56px 6px;
 
                     &:visited {
                         border: $blue-primary solid 2px;
@@ -294,7 +373,7 @@
 
                     &:active {}
                 }
-
+        
                 &.disabled {
                     .theme-button-primary {
                         color: $grey;
@@ -355,8 +434,6 @@
                     display: -webkit-box;
                     display: -ms-flexbox;
                     display: flex;
-                    //display: block;
-                    //position: absolute;
                     left: 32px;
                     top: 32px;
                     
@@ -389,14 +466,9 @@
             }
         }
         
-        @media (max-width: 576px) {
-            .no-padding-right {
-                padding-right: 15px;
-            }    
+        @media (max-width: 576px) {   
             .form-buttons {    
                 .standardcta-button-wrapper {
-                    width: 100%;
-                    margin: 0 0 16px 0;
 
                     &:last-of-type {
                         margin: 0;
@@ -414,7 +486,8 @@
         margin: 0 0 32px 0;
         
         @media (max-width: 576px) {
-            padding: 16px;
+            padding: 0px;
+            border: none;
         }
 
         .results-accordion {
@@ -567,7 +640,7 @@
                             }
                         }
 
-                        @media (max-width: 768px) {
+                        @media (max-width: 767px) {
                             td {
                                 &.question {
                                     width: 60%;
@@ -619,6 +692,8 @@
             margin-bottom: 0;
             
             .form-buttons {
+                text-align: left;
+                
                 .standardcta-button-wrapper {
                     width: auto;
                     margin: 0;
