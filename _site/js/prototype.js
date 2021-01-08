@@ -299,7 +299,7 @@ $(document).ready(function () {
     /*------------------- Form functionality -------------------*/
     // Disable next button functionality
     $(".disabled").on('click', function(e){
-       e.preventDefault(); 
+       //e.preventDefault(); 
     });
     
     // Radio buttons
@@ -313,20 +313,25 @@ $(document).ready(function () {
             $(this).parents("form").find(".disabled").removeClass("disabled");
             
         }*/
+        
+        if($(this).parents(".form-question").hasClass("last")) {
+            //$('form .disabled').removeClass('disabled');
+        }
     });
     
     // Error messaging
     $(".next-button").on("click", function(e){
-        
-        if ($(".form-question").length !== $(".form-question.item-checked").length) {
-            e.preventDefault(); 
-            
-            $(".form-question").each(function(){
-                if(!$(this).hasClass("item-checked")) 
-                    {
-                        $(this).addClass("error");
-                    }
-            });
+        if(!$(this).hasClass('disabled')){
+            if ($(".form-question:visible").length !== $(".form-question.item-checked:visible").length) {
+                e.preventDefault(); 
+
+                $(".form-question:visible").each(function(){
+                    if(!$(this).hasClass("item-checked")) 
+                        {
+                            $(this).addClass("error");
+                        }
+                });
+            }
         }
     });
     
@@ -358,17 +363,139 @@ $(document).ready(function () {
         $(this).toggleClass('open');
     });
     
-    // Dynamic form questions
-    $(".location-1 .radio-item label").on('click', function(){
-        
+    
+    
+    // Dynamic form questions - VERSION A
+    // First section
+    $(".a .location .radio-item label").on('click', function(){
+      
         if($(this).hasClass("land")) {
-            console.log("focus man");
-            
-            $('.location-land-1').slideDown().removeClass('inactive');
-           }
+            $('.group-sea').addClass('inactive');
+            $('.location-land-1').removeClass('inactive');
+        } 
+        else if($(this).hasClass("sea")) {
+            $('.group-land').addClass('inactive');          
+            $('.location-sea-1').removeClass('inactive');
+        } 
+        else if($(this).hasClass("both")){
+            $('.location-land-1').removeClass('inactive');
+            $('.location-sea-1').addClass('inactive');
+            $('.location-land-1').addClass('both');
+            $('.location-land-2').addClass('both');
+        }
     });
     
+    // Land section
+    $(".a .location-land-1 .radio-item label").on("click", function(){
+        if($(this).hasClass("yes")) {
+            $(".location-land-1-yes").removeClass('inactive');
+            $(".location-land-2").removeClass('inactive');
+        }
+        else if($(this).hasClass("no")) {
+            $(".location-land-1-yes").addClass('inactive');
+            $(".location-land-2").addClass('inactive');
+            
+            if ($(this).parents(".location-land-1").hasClass('both')) {
+                $('.location-sea-1').removeClass('inactive');
+            }
+        }
+    });
+    $(".a .location-land-2 .radio-item label").on("click", function(){
+        if ($(this).parents(".location-land-2").hasClass('both')) {
+            $('.location-sea-1').removeClass('inactive');
+        }
+    });
+    
+    // Sea section
+    $('.a .location-sea-1 .radio-item label').on('click', function(){
+        if($(this).hasClass("yes")) {
+            $(".location-sea-1-yes").removeClass('inactive');
+            $(".location-sea-2").removeClass('inactive');
+        }
+        else if($(this).hasClass("no")) {
+            $(".location-sea-1-yes").addClass('inactive');
+            $(".location-sea-2").removeClass('inactive');
+        }
+    });
+    $('.a .location-sea-2 .radio-item label').on('click', function(){
+        if($(this).hasClass("yes")) {
+            $(".location-sea-2-yes").removeClass('inactive');
+        }
+        else if($(this).hasClass("no")) {
+            $(".location-sea-2-yes").addClass('inactive');
+        }
+    });
 
+
+    
+    // Dynamic form questions - VERSION B
+    // First section
+    $(".b .location .radio-item label").on('click', function(){
+      
+        if($(this).hasClass("land")) {
+            sessionStorage.setItem('location', "land");
+        } 
+        else if($(this).hasClass("sea")) {
+            sessionStorage.setItem('location', "sea");
+        } 
+        else if($(this).hasClass("both")){
+            sessionStorage.setItem('location', "both");
+        }
+    });
+    $(".b .location-submit").on('click', function(e){
+        e.preventDefault(); 
+        var location = sessionStorage.getItem('location');
+
+        if (location === 'land' || location === 'both') {
+            window.location.pathname = "/bga-major-projects-help/tool-airport-b.html";
+        } else if (location === 'sea') {
+            window.location.pathname = "/bga-major-projects-help/tool-maritime-b.html";
+        }
+    });  
+
+    
+    // Land section
+    $(".b .location-land-1 .radio-item label").on("click", function(){
+        if($(this).hasClass("yes")) {
+            $(".location-land-1-yes").removeClass('inactive');
+            $(".location-land-2").removeClass('inactive');
+        }
+        else if($(this).hasClass("no")) {
+            $(".location-land-1-yes").addClass('inactive');
+        }
+    });
+    $(".b .road-submit").on('click', function(e){
+        e.preventDefault(); 
+        var location = sessionStorage.getItem('location');
+        
+        if (location === 'both') {
+            window.location.pathname = "/bga-major-projects-help/tool-maritime-b.html";
+        } else {
+            window.location.pathname = "/bga-major-projects-help/tool-results.html";
+        }
+    });
+         
+         
+    // Sea section
+    $('.b .location-sea-1 .radio-item label').on('click', function(){
+        if($(this).hasClass("yes")) {
+            $(".location-sea-1-yes").removeClass('inactive');
+        }
+        else if($(this).hasClass("no")) {
+            $(".location-sea-1-yes").addClass('inactive');
+        }
+    });
+    $('.b .location-sea-2 .radio-item label').on('click', function(){
+        if($(this).hasClass("yes")) {
+            $(".location-sea-2-yes").removeClass('inactive');
+        }
+        else if($(this).hasClass("no")) {
+            $(".location-sea-2-yes").addClass('inactive');
+        }
+    });
+
+      
+    
     
 }); // END doc ready
 
