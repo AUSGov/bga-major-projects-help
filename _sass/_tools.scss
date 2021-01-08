@@ -111,15 +111,13 @@
    
     /* PROGRESS BAR */
     .progress-percentage {
-        margin-bottom: 4px;
+        margin-bottom: 12px;
         
         p {
-            font-family: "Open Sans", sans-serif;
-            font-weight: 400;
-            font-style: normal;
+            @include font-format($font-family, $font-semibold, normal);
             font-size: 14px;
             line-height: normal;
-            color: $grey-darker;
+            color: $purple-dark;
             display: inline;
         }
     }
