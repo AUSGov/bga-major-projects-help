@@ -1,4 +1,4 @@
-# BGA Guide
+# Major projects help tool 
 
-[Guide landing page demo](https://ausgov.github.io/bga-guide/guide-demo.html)
+[Major projects help tool demo pages](https://ausgov.github.io/bga-major-projects-help/tool-get-started.html)
     
