@@ -3644,14 +3644,15 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section .progress-percentage { margin-bottom: 12px; }
 
-.tool-main-section .progress-percentage p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; font-size: 14px; line-height: normal; color: #A42079; display: inline; }
+.tool-main-section .progress-percentage p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; font-size: 14px; line-height: normal; color: #A42079; display: inline; margin: 0 !important; }
 
 .tool-main-section .progress { display: flex; overflow: hidden; font-size: 12px; border-radius: 4px; height: 4px; background: #D8D8D8; margin-bottom: 48px; }
 
 .tool-main-section .progress .progress-bar { display: flex; flex-direction: column; justify-content: center; color: #ffffff; text-align: center; white-space: nowrap; height: 4px; background: #A42079; border-radius: 4px; transition: width 0.6s ease; }
 
 @media (max-width: 576px) { .tool-main-section .progress, .tool-main-section .progress-bar { height: 3px; }
-  .tool-main-section .progress-percentage p { font-size: 12px; margin-bottom: 8px; } }
+  .tool-main-section .progress-percentage { margin-bottom: 8px; }
+  .tool-main-section .progress-percentage p { font-size: 12px; } }
 
 .tool-main-section form { margin-bottom: 32px; /* CONTEXTUAL HELP */ /* RADIO BUTTONS */ /* ERROR MESSAGES */ /* BUTTONS */ /* CLAUSE BOXES */ }
 
@@ -3767,7 +3768,7 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section .results-container .results-accordion .result-item-title svg { position: absolute; right: 16px; top: calc(50% - 5px); }
 
-.tool-main-section .results-container .results-accordion .result-item-title p:last-of-type { padding: 0 24px 0 0; }
+.tool-main-section .results-container .results-accordion .result-item-title p:last-of-type { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; padding: 0 24px 0 0; }
 
 .tool-main-section .results-container .results-accordion .result-item-title.open { background: #F5F5F5; }
 
@@ -3777,7 +3778,7 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section .results-container .results-accordion .result-item-title:hover, .tool-main-section .results-container .results-accordion .result-item-title:active, .tool-main-section .results-container .results-accordion .result-item-title:focus { background: #F5F5F5; cursor: pointer; }
 
-.tool-main-section .results-container .results-accordion .result-item-title:hover p, .tool-main-section .results-container .results-accordion .result-item-title:active p, .tool-main-section .results-container .results-accordion .result-item-title:focus p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; }
+.tool-main-section .results-container .results-accordion .result-item-title:hover p, .tool-main-section .results-container .results-accordion .result-item-title:active p, .tool-main-section .results-container .results-accordion .result-item-title:focus p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; text-decoration: underline; }
 
 .tool-main-section .results-container .results-accordion .result-item-text { background: #F5F5F5; padding: 16px; display: none; }
 
@@ -3797,13 +3798,15 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:hover, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:active, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:focus { cursor: pointer; }
 
-.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:hover p, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:active p, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:focus p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:hover p, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:active p, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title:focus p { font-family: "Open Sans", sans-serif; font-weight: 600; font-style: normal; text-decoration: underline; }
 
 .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text { background: #FFECF3; padding: 16px; display: none; }
 
 .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table { width: 100%; }
 
-.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table tr { display: flex; border-bottom: solid 2px #D8D8D8; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table tr { display: flex; border-bottom: solid 1px #A42079; }
+
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table tr:last-of-type { border-bottom: none; }
 
 .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td { padding: 16px; }
 
@@ -3813,11 +3816,11 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit { padding-right: 0px; width: 15%; text-align: right; }
 
-.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a { background: url(../assets/Icon-edit.svg) no-repeat; background-position: center right; padding-right: 24px; border-bottom: none; text-decoration: underline; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a { background: url(../assets/Icon-edit.svg) no-repeat; background-position: center right; padding-right: 24px; text-decoration: none; border-bottom: 2px solid #748FB8; }
 
-.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:visited { color: #4569A0; border-bottom-color: none; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:visited { color: #4569A0; border-bottom-color: #4569A0; }
 
-.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:focus, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:hover { box-shadow: none; color: #254F90; }
+.tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:focus, .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit a:hover { box-shadow: none; color: #254F90; background: #ffffff url(../assets/Icon-edit-hover.svg) no-repeat; background-position: center right; }
 
 @media (max-width: 767px) { .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.question { width: 60%; }
   .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.answer { width: 20%; }
@@ -3825,9 +3828,9 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 @media (max-width: 576px) { .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table { display: block; border-spacing: 0; }
   .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table tr { display: block; }
-  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.question { width: 100%; display: block; }
+  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.question { width: 100%; display: block; padding: 16px 0px 8px 0px; }
   .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.answer { width: 61%; display: inline-block; padding: 8px 0px; }
-  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit { width: 36%; display: inline-block; padding: 8px 0px; } }
+  .tool-main-section .results-container .answers-accordion .answers-item .answers-item-text table td.edit { width: 36%; display: inline-block; padding: 0px; } }
 
 .tool-main-section .results-container form { margin-bottom: 0; }
 

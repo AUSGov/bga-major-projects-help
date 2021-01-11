@@ -134,6 +134,7 @@
             line-height: normal;
             color: $purple-dark;
             display: inline;
+            margin: 0 !important;
         }
     }
 
@@ -166,9 +167,12 @@
         .progress-bar {
             height: 3px;
         }
-        .progress-percentage p {
-            font-size: 12px;
+        .progress-percentage {
             margin-bottom: 8px;
+            p {
+                font-size: 12px;
+                
+            }
         }
     }
     
@@ -522,6 +526,7 @@
                 }
 
                 p:last-of-type {
+                    @include font-format($font-family, $font-semibold, normal);
                     padding: 0 24px 0 0;
                 }
 
@@ -545,6 +550,7 @@
 
                     p {
                         @include font-format($font-family, $font-semibold, normal);
+                        text-decoration: underline;
                     }
                 }
             }
@@ -597,6 +603,7 @@
 
                         p {
                             @include font-format($font-family, $font-semibold, normal);
+                            text-decoration: underline;
                         }
                     }
                 }
@@ -611,7 +618,11 @@
 
                         tr {
                             display: flex;
-                            border-bottom: solid 2px $grey-light;
+                            border-bottom: solid 1px $purple-dark;
+                            
+                            &:last-of-type {
+                                border-bottom: none;
+                            }
                         }
 
                         td {
@@ -636,18 +647,20 @@
                                     background: url(../assets/Icon-edit.svg) no-repeat;
                                     background-position: center right;
                                     padding-right: 24px;
-                                    border-bottom: none;
-                                    text-decoration: underline;
+                                    text-decoration: none;
+                                    border-bottom: 2px solid #748FB8;
 
                                     &:visited {
                                         color: $blue-primary-mid;
-                                        border-bottom-color: none;
+                                        border-bottom-color: $blue-primary-mid;
                                     }
 
                                     &:focus,
                                     &:hover {
                                         box-shadow: none;
                                         color: $blue-primary;
+                                        background: $white url(../assets/Icon-edit-hover.svg) no-repeat;
+                                        background-position: center right;
                                     }
                                 }
                             }
@@ -681,6 +694,7 @@
                                 &.question {
                                     width: 100%;
                                     display: block;
+                                    padding: 16px 0px 8px 0px;
                                 }
 
                                 &.answer {
@@ -692,7 +706,7 @@
                                 &.edit {
                                     width: 36%;
                                     display: inline-block;
-                                    padding: 8px 0px;
+                                    padding: 0px;
                                 }
                             }
                         }
