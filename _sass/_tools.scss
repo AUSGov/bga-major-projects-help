@@ -509,6 +509,7 @@
 
         .results-accordion {
             margin: 0 0 32px 0;
+            border-top: 4px solid $grey-light; 
 
             .result-item {
                 border-bottom: solid 2px $grey-light;
@@ -525,13 +526,23 @@
                     top: calc(50% - 5px);
                 }
 
-                p:last-of-type {
-                    @include font-format($font-family, $font-semibold, normal);
-                    padding: 0 24px 0 0;
+                p {
+                    font-size: 18px;
+                    line-height: 1.4;
+                    span {
+                        font-size: 14px;
+                        @include font-format($font-family, $font-regular, normal);
+                        display:inline-block;
+                    }
+                    &:last-of-type {
+                        @include font-format($font-family, $font-semibold, normal);
+                        padding: 0 24px 0 0;
+                    }
                 }
 
                 &.open {
                     background: $grey-lightest;
+                    //background: $purple-lightest;
 
                     p {
                         @include font-format($font-family, $font-semibold, normal);
@@ -546,22 +557,29 @@
                 &:active,
                 &:focus {
                     background: $grey-lightest;
+                    //background: $purple-lightest;
                     cursor: pointer;
 
                     p {
                         @include font-format($font-family, $font-semibold, normal);
                         text-decoration: underline;
+                        
+                        span {
+                            text-decoration: none;
+                        }
                     }
                 }
             }
 
             .result-item-text {
                 background: $grey-lightest;
+                //background: $purple-lightest;
                 padding: 16px;
                 display: none;
+                font-size: 16px;
 
                 p:last-of-type {
-                    padding: 0;
+                    padding: 0 0 16px 0;
                 }
             }
         }
@@ -571,9 +589,12 @@
 
             .answers-item {
                 .answers-item-title {
-                    background: $purple-light;
-                    padding: 16px;
+                    background: lighten($purple-light, 4%);
+                    //background: $blue-primary-mid;
+                    padding: 24px 16px;
                     position: relative;
+                    //box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+                    z-index: 10;
 
                     svg {
                         position: absolute;
@@ -581,13 +602,14 @@
                         top: calc(50% - 5px);
                     }
 
-                    p:last-of-type {
+                    h3:last-of-type {
                         padding: 0 24px 0 0;
+                        //color: $white;
                     }
 
                     &.open {
 
-                        p {
+                        h3 {
                             @include font-format($font-family, $font-semibold, normal);
                         }
 
@@ -599,9 +621,10 @@
                     &:hover,
                     &:active,
                     &:focus {
+                        background: $purple-light;
                         cursor: pointer;
 
-                        p {
+                        h3 {
                             @include font-format($font-family, $font-semibold, normal);
                             text-decoration: underline;
                         }
@@ -612,6 +635,7 @@
                     background: $purple-lightest;
                     padding: 16px;
                     display: none;
+                    z-index: 20;
 
                     table {
                         width: 100%;
@@ -648,7 +672,7 @@
                                     background-position: center right;
                                     padding-right: 24px;
                                     text-decoration: none;
-                                    border-bottom: 2px solid #748FB8;
+                                    border-bottom: 1px solid #748FB8;
 
                                     &:visited {
                                         color: $blue-primary-mid;
