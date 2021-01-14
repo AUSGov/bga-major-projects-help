@@ -3790,7 +3790,7 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section .results-container .results-accordion .result-item-text p:last-of-type { padding: 0 0 16px 0; }
 
-.tool-main-section .results-container .answers-accordion { margin: 0 0 32px 0; }
+.tool-main-section .results-container .answers-accordion { margin: 48px 0 32px 0; }
 
 .tool-main-section .results-container .answers-accordion .answers-item .answers-item-title { background: #e5bfd9; padding: 24px 16px; position: relative; z-index: 10; }
 
