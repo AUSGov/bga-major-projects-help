@@ -411,6 +411,19 @@
                         }
                     }
                 }
+                
+                @media (max-width: 576px) {
+                    width: 60%;
+                    
+                    &.return-to-results {
+                        display: block;
+                        margin: 24px 12px 0 0 !important;
+                        float: right;
+                    }
+                    .theme-button-secondary {
+                        padding: 14px 8px 6px;
+                    }
+                }
             }
         }
         
@@ -722,30 +735,6 @@
                             }
                         }
 
-                        /*@media (max-width: 767px) {
-                            td {
-                                &.section-title {
-                                    //width: 70%;
-                                    background: yellow;
-                                }
-                                &.question {
-                                    width: 100%;
-                                }
-
-                                &.answer {
-                                    width: 100%;
-                                    text-align: left;
-                                }
-
-                                &.edit {
-                                    background: pink;
-                                    //width: 40%;
-                                    text-align: left;
-                                    text-align: right;
-                                }
-                            }
-                        }*/
-
                         @media (max-width: 576px) {
                             display: block;
                             border-spacing: 0;
@@ -756,7 +745,7 @@
 
                             td {
                                 &.section-title {
-                                    width: 64%;
+                                    width: 62%;
                                     display: inline-block;
                                     font-size: 18px;
                                 }
@@ -764,12 +753,15 @@
                                     width: 100%;
                                     display: block;
                                     padding: 16px 0px 8px 0px;
+                                    font-size: 14px;
                                 }
 
                                 &.answer {
-                                    width: 61%;
+                                    width: 100%;
                                     display: inline-block;
-                                    padding: 8px 0px;
+                                    padding: 0px;
+                                    text-align: left;
+                                    font-size: 14px;
                                 }
 
                                 &.edit {
@@ -779,7 +771,6 @@
                                     a {
                                         font-size: 18px;
                                     }
-                                    //padding: 0px;
                                 }
                             }
                         }

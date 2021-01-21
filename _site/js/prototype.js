@@ -363,71 +363,7 @@ $(document).ready(function () {
         $(this).toggleClass('open');
     });
     
-    
-    
-    // Dynamic form questions - VERSION A
-    // First section
-    $(".a .location .radio-item label").on('click', function(){
-      
-        if($(this).hasClass("land")) {
-            $('.group-sea').addClass('inactive');
-            $('.location-land-1').removeClass('inactive');
-        } 
-        else if($(this).hasClass("sea")) {
-            $('.group-land').addClass('inactive');          
-            $('.location-sea-1').removeClass('inactive');
-        } 
-        else if($(this).hasClass("both")){
-            $('.location-land-1').removeClass('inactive');
-            $('.location-sea-1').addClass('inactive');
-            $('.location-land-1').addClass('both');
-            $('.location-land-2').addClass('both');
-        }
-    });
-    
-    // Land section
-    $(".a .location-land-1 .radio-item label").on("click", function(){
-        if($(this).hasClass("yes")) {
-            $(".location-land-1-yes").removeClass('inactive');
-            $(".location-land-2").removeClass('inactive');
-        }
-        else if($(this).hasClass("no")) {
-            $(".location-land-1-yes").addClass('inactive');
-            $(".location-land-2").addClass('inactive');
-            
-            if ($(this).parents(".location-land-1").hasClass('both')) {
-                $('.location-sea-1').removeClass('inactive');
-            }
-        }
-    });
-    $(".a .location-land-2 .radio-item label").on("click", function(){
-        if ($(this).parents(".location-land-2").hasClass('both')) {
-            $('.location-sea-1').removeClass('inactive');
-        }
-    });
-    
-    // Sea section
-    $('.a .location-sea-1 .radio-item label').on('click', function(){
-        if($(this).hasClass("yes")) {
-            $(".location-sea-1-yes").removeClass('inactive');
-            $(".location-sea-2").removeClass('inactive');
-        }
-        else if($(this).hasClass("no")) {
-            $(".location-sea-1-yes").addClass('inactive');
-            $(".location-sea-2").removeClass('inactive');
-        }
-    });
-    $('.a .location-sea-2 .radio-item label').on('click', function(){
-        if($(this).hasClass("yes")) {
-            $(".location-sea-2-yes").removeClass('inactive');
-        }
-        else if($(this).hasClass("no")) {
-            $(".location-sea-2-yes").addClass('inactive');
-        }
-    });
 
-
-    
     // Dynamic form questions - VERSION B
     // First section
     $(".b .location .radio-item label").on('click', function(){
@@ -464,6 +400,7 @@ $(document).ready(function () {
             $(".location-land-1-yes").addClass('inactive');
         }
     });
+    
     $(".b .road-submit").on('click', function(e){
         e.preventDefault(); 
         var location = sessionStorage.getItem('location');
@@ -493,7 +430,7 @@ $(document).ready(function () {
             $(".location-sea-2-yes").addClass('inactive');
         }
     });
-
+    
       
     
     
