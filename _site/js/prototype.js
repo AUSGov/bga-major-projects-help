@@ -89,11 +89,11 @@ $(document).ready(function () {
     }
     
     // Remove whitespace from anchor-section names or they break the sidemenu links
-    /*$('.anchor-section').each(function(){
+    $('.anchor-section').each(function(){
         var section_name = $(this).attr('name');
         section_name = $(this).attr('name').replace(/\s/g,' ');
         $(this).attr('name', section_name);
-    });*/
+    });
     
     // Function to make the side menu sticky
     var stickyPosition = $('.anchor-menu').offset(); //This var is outside the function because it needs to be determined BEFORE window resizing,.
