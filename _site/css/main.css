@@ -3738,17 +3738,19 @@ label { display: block; padding: 5px 0; font-weight: bold; }
   .tool-main-section form .form-buttons .standardcta-button-wrapper.return-to-results { display: block; margin: 24px 12px 0 0 !important; float: right; }
   .tool-main-section form .form-buttons .standardcta-button-wrapper .theme-button-secondary { padding: 14px 8px 6px; } }
 
-.tool-main-section form .clause-box { padding: 0px 1.5em 1em 1.5em; display: none; border: 4px solid #EBEBEB; border-radius: 4px; margin: 0 0 32px 0; background: #f8f9fa; }
+.tool-main-section form .clause-box { padding: 24px; display: none; border: 4px solid #EBEBEB; border-radius: 4px; margin: 0 0 32px 0; background: #f8f9fa; }
 
 .tool-main-section form .clause-box .clause-question .clause-checkbox { border-bottom: 2px solid #ffc107; }
 
 .tool-main-section form .clause-box .clause-question .clause-checkbox .checkbox-item { display: inline-block; }
 
-.tool-main-section form .clause-box .clause-content { -webkit-box-align: normal; -ms-flex-align: normal; align-items: normal; padding-top: 16px; }
+.tool-main-section form .clause-box .clause-content { -webkit-box-align: normal; -ms-flex-align: normal; align-items: normal; padding-top: 0; }
 
-.tool-main-section form .clause-box .clause-content p { padding: 0.25em 0; }
+.tool-main-section form .clause-box .clause-content p { padding: 16px 0; }
 
-.tool-main-section form .clause-box .clause-content .clause-icon { padding: 0.5em 0; -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; left: 32px; top: 32px; }
+.tool-main-section form .clause-box .clause-content p:last-of-type { padding: 16px 0 0 0; }
+
+.tool-main-section form .clause-box .clause-content .clause-icon { padding: 0; -webkit-box-align: center; -ms-flex-align: center; align-items: center; display: -webkit-box; display: -ms-flexbox; display: flex; left: 32px; top: 32px; }
 
 .tool-main-section form .clause-box .clause-content .clause-icon svg { width: 56px; }
 
