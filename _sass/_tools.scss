@@ -245,7 +245,7 @@
         /* RADIO BUTTONS */
         .radio-item {
             margin-bottom: 32px;
-            display: flex; 
+            display: flex;
 
             input[type="radio"] {
                 opacity: 0;
@@ -261,13 +261,22 @@
                 display: inline-block;
                 line-height: 20px;
                 width: calc(50% - 16px);
-                margin-right: 16px;
+                margin: 0 16px 0 0;
                 font-size: 16px;
                 @include font-format($font-family, $font-regular, normal);
                 border: solid 1px $black-light;
+                width: 48%;
 
                 &:last-of-type {
-                    margin-right: 0;
+                    margin-right: 0 !important;
+                }
+                &:focus {
+                    border: solid 4px $blue-primary;
+                    border-radius: none;
+                }
+                &:focus-visible {
+                    outline-color: none;
+                    outline-width: 0;
                 }
 
                 &:before {
@@ -286,7 +295,6 @@
                     &:before {
                         background: url(../assets/radio-selected.svg) no-repeat;
                         background-size: 24px 24px;
-
                     }
                 }
             }
@@ -322,6 +330,37 @@
                     color: $red-negative-dark;
                     margin: 0 0 32px 0;
                     padding: 8px 0 0 0; 
+                }
+            }
+        }
+        &.new-states {
+            .radio-item {
+                justify-content: space-evenly;
+                padding: 6px;
+            }
+            .error {
+                .radio-item {
+                    margin: 0;
+                    background: #F5B5B5;
+
+                    label {
+                        outline: none;
+                        border: solid 1px $black-light;
+                        background: $white;
+                        
+                        &.focus {
+                            border: solid 4px $blue-primary;
+                        }
+                    }
+                }
+                .error-message { 
+                    display: block;
+
+                    p {
+                        color: $red-negative-dark;
+                        margin: 0 0 32px 0;
+                        padding: 8px 0 0 0; 
+                    }
                 }
             }
         }

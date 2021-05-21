@@ -328,11 +328,12 @@ $(document).ready(function () {
                 $(".form-question:visible").each(function(){
                     if(!$(this).hasClass("item-checked")) 
                         {
-                            $(this).addClass("error");
+                            $(this).addClass("error").focus();
                         }
                 });
             }
         }
+        $('.new-states .form-question.error label').first().addClass('focus');
     });
     
     

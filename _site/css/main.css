@@ -3682,9 +3682,13 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 
 .tool-main-section form .radio-item input[type="radio"] { opacity: 0; width: 0px; height: 0px; }
 
-.tool-main-section form .radio-item label { box-sizing: border-box; min-height: 54px; position: relative; padding: 14px 14px 14px 48px; cursor: pointer; display: inline-block; line-height: 20px; width: calc(50% - 16px); margin-right: 16px; font-size: 16px; font-family: "Open Sans", sans-serif; font-weight: 400; font-style: normal; border: solid 1px #333333; }
+.tool-main-section form .radio-item label { box-sizing: border-box; min-height: 54px; position: relative; padding: 14px 14px 14px 48px; cursor: pointer; display: inline-block; line-height: 20px; width: calc(50% - 16px); margin: 0 16px 0 0; font-size: 16px; font-family: "Open Sans", sans-serif; font-weight: 400; font-style: normal; border: solid 1px #333333; width: 48%; }
 
-.tool-main-section form .radio-item label:last-of-type { margin-right: 0; }
+.tool-main-section form .radio-item label:last-of-type { margin-right: 0 !important; }
+
+.tool-main-section form .radio-item label:focus { border: solid 4px #254F90; border-radius: none; }
+
+.tool-main-section form .radio-item label:focus-visible { outline-color: none; outline-width: 0; }
 
 .tool-main-section form .radio-item label:before { height: 24px; width: 24px; content: " "; background: url(../assets/radio-not-selected.svg) no-repeat; background-size: 24px 24px; position: absolute; top: calc(50% - 12px); left: 14px; }
 
@@ -3707,6 +3711,18 @@ label { display: block; padding: 5px 0; font-weight: bold; }
 .tool-main-section form .error .error-message { display: block; }
 
 .tool-main-section form .error .error-message p { color: #D2201E; margin: 0 0 32px 0; padding: 8px 0 0 0; }
+
+.tool-main-section form.new-states .radio-item { justify-content: space-evenly; padding: 6px; }
+
+.tool-main-section form.new-states .error .radio-item { margin: 0; background: #F5B5B5; }
+
+.tool-main-section form.new-states .error .radio-item label { outline: none; border: solid 1px #333333; background: #ffffff; }
+
+.tool-main-section form.new-states .error .radio-item label.focus { border: solid 4px #254F90; }
+
+.tool-main-section form.new-states .error .error-message { display: block; }
+
+.tool-main-section form.new-states .error .error-message p { color: #D2201E; margin: 0 0 32px 0; padding: 8px 0 0 0; }
 
 .tool-main-section form .inactive { display: none; }
 
